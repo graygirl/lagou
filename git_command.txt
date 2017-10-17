@@ -1,0 +1,56 @@
+cd /d/常用软件/pycharm/untitled/pachong
+查看配置：git config --global 
+	        git config --global user.name "graygirl"
+	        git config --global user.email "1937215716@qq.com"
+创建版本库：mkdir 文件名
+	          cd 文件名
+显示当前目录：pwd
+初始化：git init
+使.git目录可见：ls -ah
+把文件添加到仓库：git add 文件名
+提交：git commit -m "描述"
+查看提交历史：git log
+						  git log --pretty=oneline
+回到上一个版本：git reset --hard HEAD^
+回到上上一个版本：git reset HEAD^^
+当前往上100个版本：git reset HEAD~100
+查看文件内容：cat 文件名
+查看命令历史：git reflog
+查看状态：git status
+查看工作区和版本库里面最新版本的区别：git diff HEAD 文件名
+丢弃工作区的修改：git checkout 文件名
+删除文件：git rm 文件名
+添加远程库：git remote add origin https://github.com/graygirl/lagou.git
+推送至远程库：git push -u origin master    git push origin master
+克隆远程库：git clone https://github.com/graygirl/lagou.git
+						cd lagou
+						ls
+创建并切换分支：git checkout -b 名称
+创建分支：git branch 名称
+切换分支：git checkout 名称
+查看当前分支：git branch
+合并分支：git merge 名称
+删除分支：git branch -d 名称
+查看分支合并图：git log --graph --pretty=oneline --abbrev-commit
+禁用Fast forward模式：git merge --no-ff -m "merge with no-ff" dev
+储藏现场：git stash
+回到现场：git stash pop
+强行删除：git branch -D 名称
+远程库信息：git remote -v
+推送分支：git push origin master
+抓取远程的新提交：git pull
+在本地创建和远程分支对应的分支：git checkout -b branch-name origin/branch-name
+建立本地分支和远程分支的关联：git branch --set-upstream branch-name origin/branch-name
+打标签：git tag 名称
+查看所有标签：git tag
+查看标签信息：git show <tagname>
+指定标签信息；git tag -a <tagname> -m "blablabla..."
+用PGP签名标签：git tag -s <tagname> -m "blablabla..."
+推送一个本地标签；git push origin <tagname>
+推送全部未推送过的本地标签；git push origin --tags
+删除一个本地标签；git tag -d <tagname>
+删除一个远程标签。git push origin :refs/tags/<tagname>
+
+						
+	          
+	          
