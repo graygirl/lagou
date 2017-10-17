@@ -4,6 +4,7 @@ import urllib2
 import re
 import xlwt
 
-def geturl（）：
+def geturl()：
+print(geturl())
 
 
