@@ -4,10 +4,10 @@ import re
 import xlwt
 
 #获取远吗
-def get_conent(page):
+def get_conent():
     url = 'http://search.51job.com/list/000000,000000,0000,00,9,99,python,2,' + str(page) + '.html'
     a = urllib.request.urlopen(url)   #打开网址
-    html = a.read().decode('gdk')    #获取源代码并且转为unicode
+    html = a.read().decode('utf-8')    #获取源代码并且转为unicode
     return html
 def get(html):
     reg = re.compile(
