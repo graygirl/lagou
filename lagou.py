@@ -1,10 +1,7 @@
 # -*- coding:utf-8 -*-
 import urllib
-import urllib2
 import re
 import xlwt
 
-def geturl()：
-print(geturl())
 
 
