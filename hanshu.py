@@ -13,3 +13,15 @@ def myabs(x):
     else:
         return(-x)
 print(myabs(-5))
+#空函数
+def nop():
+    pass
+#位置参数
+def power(x,n):
+    s = 1
+    while n > 0:
+        n = n -1
+        s = s * x
+    return s
+print('x: %s 的 n: %s 次方为: '%(5,2),power(5,2))
+#默认参数
