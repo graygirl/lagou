@@ -25,3 +25,10 @@ def power(x,n):
     return s
 print('x: %s 的 n: %s 次方为: '%(5,2),power(5,2))
 #默认参数
+def power1(x,n=2):
+    s = 1
+    while n > 0:
+        n = n -1
+        s = s * x
+    return s
+print('x: %s 的 n: %s 次方为: '%(5,3),power1(5,3))
