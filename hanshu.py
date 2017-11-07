@@ -32,3 +32,16 @@ def power1(x,n=2):
         s = s * x
     return s
 print('x: %s 的 n: %s 次方为: '%(5,3),power1(5,3))
+#可变参数
+def calc(*numbers): #第一种调用方式，可变参数不确定
+    sum = 0
+    for n in numbers:
+        sum = sum + n * n
+    return sum
+print("平方和为",calc(1,2))
+nums = (1,2)  #第二种调用方式，可变参数已经给出，也可直接调用
+print(calc(*nums))
+#关键字参数
+def person(name,age,**kw):
+    return('name:',name,'age:',age)
+print(person('yangyinna',24,))
