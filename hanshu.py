@@ -5,7 +5,7 @@
 #print(abs(-100,2))  #给出的参数不符合规定会报错
 print(int('123'))
 print(int(123.32))
-'''
+
 #定义函数
 def myabs(x):
     if x > 0:
@@ -43,5 +43,49 @@ nums = (1,2)  #第二种调用方式，可变参数已经给出，也可直接�
 print(calc(*nums))
 #关键字参数
 def person(name,age,**kw):
-    return('name:',name,'age:',age)
-print(person('yangyinna',24,))
+    print('name:',name,'age:',age,'other:',kw)
+print(person('yangyinna',24,city = 'shanghai'))
+#命名关键字参数
+def person(name,age,*,job = 'engineer',city): #命名关键字函数可以有缺省值
+    print(name,age,job,city)
+print(person('yangyinna',24,job = 'engineer',city = 'shanghai'))
+#参数组合 参数定义的顺序必须是：必选参数、默认参数、可变参数、命名关键字参数和关键字参数
+def f1(a,b,c = 10,*args,**kw):
+    print('a: ',a,'b: ',b,'c: ',c,'args = ',args,'kw = ',kw)
+print(f1(1, 2, 3, 'a', 'b', x=99))
+args = (1, 2, 3, 4) #*args是可变参数，args接收的是一个tuple
+kw = {'d': 99, 'x': '#'} #**kw是关键字参数，kw接收的是一个dict
+print(f1(*args,**kw))
+#递归函数
+def jiecheng(n):
+    if n == 1:
+        return 1
+    return n * jiecheng(n-1)
+print(jiecheng(10))
+#尾递归函数
+def jiecheng(n):
+    return jiecheng_iter(n,1)
+def jiecheng_iter(num,product):
+    if num == 1:
+        return product
+    return jiecheng_iter(num - 1,num * product)
+print(jiecheng_iter(10,1))
+'''
+#切片
+l = list(range(100))
+print(l[2:6])
+#迭代
+d = {'a':1,'b':2,'c':3}
+for key in d:
+    print(key)
+for value in d.values():
+    print(value)
+for k,v in d.items():
+    print(k,v)
+#判断一个对象是否为可迭代对象
+from collections import Iterable
+print(isinstance('abx',Iterable))
+#把一个list变成索引-元素对
+for i,v in enumerate(['a','b','c']):
+    print(i,v)
+#列表生成式
