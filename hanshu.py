@@ -70,7 +70,7 @@ def jiecheng_iter(num,product):
         return product
     return jiecheng_iter(num - 1,num * product)
 print(jiecheng_iter(10,1))
-'''
+
 #切片
 l = list(range(100))
 print(l[2:6])
@@ -88,4 +88,16 @@ print(isinstance('abx',Iterable))
 #把一个list变成索引-元素对
 for i,v in enumerate(['a','b','c']):
     print(i,v)
+
 #列表生成式
+print(list(range(1,11)))
+L = []
+for x in range(1,11):
+    L.append(x * x)
+print(L)
+'''
+print([x * x for x in range(1,5) if x % 2 == 0])
+#os.listdir可以列出文件和目录
+import os
+print([d for d in os.listdir('.')])
+#生成器
