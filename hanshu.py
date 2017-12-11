@@ -95,9 +95,37 @@ L = []
 for x in range(1,11):
     L.append(x * x)
 print(L)
-'''
+
 print([x * x for x in range(1,5) if x % 2 == 0])
 #os.listdir可以列出文件和目录
 import os
 print([d for d in os.listdir('.')])
-#生成器
+
+#生成器，可以用next调用
+g = (x * x for x in range(10))
+print(next(g))
+for n in g:
+    print(n)
+
+#斐波那契额函数
+def fib(max):
+    n,a,b=0,0,1
+    while n<max:
+        yield b #将print(b)改为yield b则变成生成器，遇到yield函数将会返回，再次执行时将上次返回的语句继续执行
+        a,b=b,a+b
+        n=n+1
+    return 'done'
+f=fib(5)
+while True:
+    try:
+        x=next(f)
+        print('f:',x)
+    except StopIteration as e:
+        print('Generator return value:',e.value)
+        break
+'''
+#函数式编程
+#传入函数
+def add(x,y,abs):
+    return(abs(x)+abs(y))
+print(add(5,-12,abs))
